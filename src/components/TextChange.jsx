@@ -1,33 +1,40 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+
 const TextChange = () => {
   const texts = ["Front End Developer", "UI-UX Designer", "Computer Science & Engineering"];
-  const [currenText, setCurrentText] = useState("");
-  const [endValue, setendValue] = useState(true);
+  const [currentText, setCurrentText] = useState("");
+  const [charIndex, setCharIndex] = useState(0);
   const [isForward, setIsForward] = useState(true);
-  const [index, setIndex] = useState(0);
+  const [textIndex, setTextIndex] = useState(0);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentText(texts[index].substring(0, endValue));
+      const currentString = texts[textIndex];
+
+      
+      setCurrentText(currentString.substring(0, charIndex));
+
+      
       if (isForward) {
-        setendValue((prev) => prev + 1);
+        if (charIndex < currentString.length) {
+          setCharIndex((prev) => prev + 1);
+        } else {
+          setIsForward(false); 
+        }
       } else {
-        setendValue((prev) => prev - 1);
+        if (charIndex > 0) {
+          setCharIndex((prev) => prev - 1);
+        } else {
+          setIsForward(true); 
+          setTextIndex((prev) => (prev + 1) % texts.length);
+        }
       }
-      if (endValue > texts[index].length + 10) {
-        setIsForward(false);
-      }
-      if (endValue < 2.1) {
-        setIsForward(true);
-        setIndex((prev) => prev & texts.length);
-      }
-    }, 50);
+    }, 90);
 
-    return () => clearInterval(intervalId);
-  }, [endValue, isForward, index, texts]);
+    return () => clearInterval(intervalId); 
+  }, [charIndex, isForward, textIndex, texts]);
 
-  return <span className="transition ease duration-300 text-sky-400">{currenText}</span>;
+  return <span className="transition ease-in-out duration-300 text-sky-400">{currentText}</span>;
 };
 
 export default TextChange;

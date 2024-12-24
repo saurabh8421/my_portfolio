@@ -3,24 +3,29 @@ import Profilepic from '../../assets/photo.png'; // Ensure this path is correct
 
 const HomeBlob = () => {
   return (
-    <div className="relative w-64 h-64 overflow-hidden rounded-full shadow-lg transition-transform duration-300 hover:scale-105">
-      <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <mask id="mask0" maskUnits="userSpaceOnUse" x="0" y="0" width="200" height="200">
-          <circle cx="100" cy="100" r="100" fill="white" />
+    <div className="home__img" style={{ position: 'relative', width: '300px', height: '300px' }}>
+      <svg className="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" style={{ width: '100%', height: '100%' }}>
+        {/* Define the mask */}
+        <mask id="mask0" mask-type="alpha">
+          <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
+            130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
+            97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
+            0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"></path>
         </mask>
+
+        {/* Apply the mask */}
         <g mask="url(#mask0)">
+          {/* Blob shape with the color sky-400 */}
           <path
-            d="M60.4,-70.4C76.3,-57.4,83.9,-29.6,83.5,-9.8C83.2,9.9,75.5,18.9,68.6,28.3C61.7,37.7,55.6,47.4,45.4,56.5C35.1,65.6,20.6,73.1,8.1,67.1C-4.3,61.1,-8.6,41.6,-24.8,35.8C-41,30,-70.1,38.1,-74.9,26.1C-79.7,14.1,-60.1,-7.3,-54.4,-22.6C-48.8,-37.8,-56.9,-46.8,-50.4,-54.1C-43.8,-61.5,-22.9,-66.1,0.1,-66.5C23.1,-66.9,46.2,-52.1,60.4,-70.4Z"
-            className="fill-sky-400 transition-transform duration-300"
+            d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
+              165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
+              129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
+              -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"
+            className="fill-sky-400"
+            style={{ fill: '#38bdf8' }} // This is Tailwind's `sky-400` color in hex
           />
-          <image
-            className="w-full h-full object-cover"
-            x="0"
-            y="0"
-            width="200"
-            height="200"
-            href={Profilepic}
-          />
+          {/* Insert the image inside the blob */}
+          <image className="home__blob-img" x="15" y="0" xlinkHref={Profilepic} width="85%"></image>
         </g>
       </svg>
     </div>

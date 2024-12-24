@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import { IoLogoInstagram } from "react-icons/io5";
-import { BsFacebook,BsGithub } from "react-icons/bs";
+import { BsFacebook,BsGithub,BsLinkedin  } from "react-icons/bs";
 import { RiTwitterXFill } from "react-icons/ri";
 
 const Footer = () => {
@@ -41,7 +41,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-sky-200 dark:bg-zinc-950 dark:text-white py-10 md:py-16">
+    <footer id="Footer" className="bg-sky-200 dark:bg-zinc-950 dark:text-white py-10 md:py-16">
       <div className="container mx-auto px-4 md:flex md:justify-between md:items-start">
 
         {/* Contact Form */}
@@ -55,7 +55,7 @@ const Footer = () => {
               onChange={handleChange}
               placeholder="Your Name"
               required
-              className="p-3 bg-slate-100 dark:bg-slate-800 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-sky-400"
+              className="p-3 bg-slate-100 dark:bg-slate-800 rounded-md dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-400"
             />
             <input
               type="email"
@@ -73,7 +73,7 @@ const Footer = () => {
               onChange={handleChange}
               placeholder="Your Message"
               required
-              className="p-3 bg-slate-100 dark:bg-slate-800 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-sky-400"
+              className="p-3 bg-slate-100 dark:bg-slate-800 rounded-md dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-400"
             ></textarea>
             <button
               type="submit"
@@ -100,13 +100,14 @@ const Footer = () => {
 
           {/* Social Media Links */}
           <div className="flex justify-start gap-8 mt-6">
-            <a href="https://www.instagram.com/saurabh_saini_261/" target="_blank" rel="noopener noreferrer">
-              <IoLogoInstagram size={30} className="text-sky-400 hover:text-white transition duration-300" />
+            <a href="https://www.linkedin.com/in/saurabh-kumar-5193b9229/" target="_blank" rel="noopener noreferrer">
+            <BsLinkedin size={30} className="text-sky-400 hover:text-white transition duration-300" />
+
             </a>
             <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
               <BsFacebook size={30} className="text-sky-400 hover:text-white transition duration-300" />
             </a>
-            <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/saurabh8421" target="_blank" rel="noopener noreferrer">
               <BsGithub size={30} className="text-sky-400 hover:text-white transition duration-300" />
             </a>
             <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">

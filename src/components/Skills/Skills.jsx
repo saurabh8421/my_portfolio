@@ -1,84 +1,94 @@
 import React from "react";
+import reactLogo from '../../logos/react.svg'
+import tailwindLogo from '../../logos/tailwindcss.svg'
+import expressLogo from '../../logos/express.svg'
+import nodeLogo from '../../logos/node.svg'
+import mongoLogo from '../../logos/mongo.svg'
+import gitLogo from '../../logos/git.svg'
+import jsLogo from '../../logos/js.svg'
+import htmlLogo from '../../logos/html.svg'
+import cssLogo from '../../logos/css.svg'
+import postmanLogo from '../../logos/postman.svg'
 import { IoArrowForward } from "react-icons/io5";
 
 const Skills = () => {
   return (
-    <div id="Skills" className="p-10 md:p-20  dark:bg-gray-900">
-      <h1 className="text-2xl md:text-4xl dark:text-white font-bold mb-8 text-slate-950">Skills</h1>
+    <div id="Skills" className="p-10 md:p-20 dark:bg-gray-900">
+      <h1 className="text-3xl md:text-5xl dark:text-white font-extrabold mb-10 text-center text-slate-950">
+        My Skills
+      </h1>
+
+      {/* Tech Stack Section */}
+      <div className="bg-sky-200 dark:bg-zinc-800 rounded-lg p-8 mb-16 shadow-xl">
+        <h2 className="text-2xl dark:text-white font-bold mb-8 text-center">
+          Tech Stack
+        </h2>
+        <div className="flex flex-wrap justify-center gap-10">
+          {[htmlLogo, cssLogo, jsLogo, reactLogo, tailwindLogo, nodeLogo, mongoLogo, expressLogo, gitLogo, postmanLogo]
+            .map((logo, index) => (
+              <img
+                key={index}
+                src={logo}
+                alt={logo.split('/').pop().split('.')[0] + " Logo"}
+                className="w-20 h-20 hover:scale-110 transition-transform duration-300 ease-in-out"
+              />
+            ))}
+        </div>
+      </div>
+
+      {/* Skills Section */}
       <div className="flex flex-wrap items-center justify-around">
-        {/* Frontend Development Skills Card */}
+        {/* Frontend Development */}
         <div className="bg-sky-200 dark:bg-zinc-800 rounded-lg p-6 m-4 w-full md:w-1/3 shadow-lg transition-transform transform hover:scale-105">
           <h2 className="text-xl dark:text-white font-semibold mb-4">Frontend Development</h2>
-          <p className="text-sm dark:text-gray-300 mb-4 font-semibold">
-            Proficient in building responsive and interactive web applications using modern frameworks like React.js.
+          <p className="text-sm dark:text-gray-300 mb-4 font-medium">
+            Proficient in HTML, CSS, and JavaScript, with expertise in frameworks like React.js and Tailwind CSS. 
+            Experience in creating responsive designs, implementing state management with Redux, and ensuring smooth routing using React Router.
           </p>
-          <div className="flex flex-col mb-4">
+          <div className="flex flex-col">
             <div className="flex items-center mb-2">
               <IoArrowForward size={20} className="text-blue-400" />
-              <span className="text-gray-400 ml-2">Developed user interfaces focusing on performance and accessibility.</span>
+              <span className="text-gray-400 ml-2">
+                Built dynamic interfaces optimized for performance and accessibility.
+              </span>
             </div>
             <div className="flex items-center mb-2">
               <IoArrowForward size={20} className="text-blue-400" />
-              <span className="text-gray-400 ml-2">Collaborated with UX/UI designers to create seamless user experiences.</span>
-            </div>
-            <div className="flex items-center mb-2">
-              <IoArrowForward size={20} className="text-blue-400" />
-              <span className="text-gray-400 ml-2">Implemented state management using Redux and Context API.</span>
+              <span className="text-gray-400 ml-2">
+                Integrated APIs and developed interactive components.
+              </span>
             </div>
           </div>
-          <button className="bg-sky-400 hover:bg-sky-500 text-white font-semibold py-2 px-4 rounded transition-colors shadow-md hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50">
-            Learn More
-          </button>
         </div>
 
-        {/* Web Design Skills Card */}
+        {/* Backend Development */}
+        <div className="bg-sky-200 dark:bg-zinc-800 rounded-lg p-6 m-4 w-full md:w-1/3 shadow-lg transition-transform transform hover:scale-105">
+          <h2 className="text-xl dark:text-white font-semibold mb-4">Backend Development</h2>
+          <p className="text-sm dark:text-gray-300 mb-4 font-medium">
+            Strong understanding of server-side technologies using Node.js and Express.js. Skilled in designing REST APIs, working with MongoDB databases, and leveraging Postman for API testing and development.
+          </p>
+          <div className="flex flex-col">
+            <div className="flex items-center mb-2">
+              <IoArrowForward size={20} className="text-blue-400" />
+              <span className="text-gray-400 ml-2">
+                Developed RESTful APIs and middleware for scalable applications.
+              </span>
+            </div>
+            <div className="flex items-center mb-2">
+              <IoArrowForward size={20} className="text-blue-400" />
+              <span className="text-gray-400 ml-2">
+                Integrated database operations using MongoDB and Mongoose.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Web Design */}
         <div className="bg-sky-200 dark:bg-zinc-800 rounded-lg p-6 m-4 w-full md:w-1/3 shadow-lg transition-transform transform hover:scale-105">
           <h2 className="text-xl dark:text-white font-semibold mb-4">Web Design</h2>
-          <p className="text-sm dark:text-gray-300 mb-4 font-semibold">
-            Skilled in creating visually appealing and user-friendly website designs tailored to client needs.
+          <p className="text-sm dark:text-gray-300 mb-4 font-medium">
+            Passion for crafting visually appealing and user-centric web designs using modern tools and design principles, ensuring high usability and responsiveness.
           </p>
-          <div className="flex flex-col mb-4">
-            <div className="flex items-center mb-2">
-              <IoArrowForward size={20} className="text-blue-400" />
-              <span className="text-gray-400 ml-2">Utilized tools like Figma and Adobe XD for design prototypes.</span>
-            </div>
-            <div className="flex items-center mb-2">
-              <IoArrowForward size={20} className="text-blue-400" />
-              <span className="text-gray-400 ml-2">Conducted user research to inform design decisions and improve usability.</span>
-            </div>
-            <div className="flex items-center mb-2">
-              <IoArrowForward size={20} className="text-blue-400" />
-              <span className="text-gray-400 ml-2">Developed design systems and style guides to maintain consistency.</span>
-            </div>
-          </div>
-          <button className="bg-sky-400 hover:bg-sky-500 text-white font-semibold py-2 px-4 rounded transition-colors shadow-md hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50">
-            Learn More
-          </button>
-        </div>
-
-        {/* Data Analysis Skills Card */}
-        <div className="bg-sky-200 dark:bg-zinc-800 rounded-lg p-6 m-4 w-full md:w-1/3 shadow-lg transition-transform transform hover:scale-105">
-          <h2 className="text-xl dark:text-white font-semibold mb-4">Data Analysis</h2>
-          <p className="text-sm dark:text-gray-300 mb-4 font-semibold">
-            Experienced in analyzing complex data sets to drive business decisions and enhance operational efficiency.
-          </p>
-          <div className="flex flex-col mb-4">
-            <div className="flex items-center mb-2">
-              <IoArrowForward size={20} className="text-blue-400" />
-              <span className="text-gray-400 ml-2">Utilized SQL and Python for data extraction and analysis.</span>
-            </div>
-            <div className="flex items-center mb-2">
-              <IoArrowForward size={20} className="text-blue-400" />
-              <span className="text-gray-400 ml-2">Created visualizations and dashboards to present insights to stakeholders.</span>
-            </div>
-            <div className="flex items-center mb-2">
-              <IoArrowForward size={20} className="text-blue-400" />
-              <span className="text-gray-400 ml-2">Collaborated with cross-functional teams to identify data needs and provide actionable recommendations.</span>
-            </div>
-          </div>
-          <button className="bg-sky-400 hover:bg-sky-500 text-white font-semibold py-2 px-4 rounded transition-colors shadow-md hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50">
-            Learn More
-          </button>
         </div>
       </div>
     </div>
