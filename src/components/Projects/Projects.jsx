@@ -3,12 +3,20 @@ import ProjectCard from "./ProjectCards";
 import theme from "../../assets/theme.png"
 import todo from "../../assets/todo.png"
 import currency from "../../assets/currency.png"
+import ScoreSnap from "../../assets/ScoreSnap.png"
 
 const Projects = () => {
   return (
     <div id="Projects" className="p-10 md:p-24 text-white">
       <h1 className="text-2xl md:text-4xl text-slate-950 dark:text-white font-bold ">Projects</h1>
       <div className="py-12 px-8 flex flex-wrap gap-5 justify-center">
+        <ProjectCard
+          bannerImg={ScoreSnap}
+          title="ScoreSnap: A instant Answer key Analyzer"
+          main="ScoreSnap is a web application that helps students to analyze their RRB/SSC exams answer keys and get instant results."
+          demo="https://score-snap-cyan.vercel.app/"
+          source="https://github.com/saurabh8421/ScoreSnap"
+        />
         <ProjectCard
           bannerImg={currency}
           title="Currency Converter"
